@@ -22,6 +22,21 @@ onSubscribe = observer => {
         }
     }
 }
+const infinitySubscribe = observer => {
+    let number = 1;
+    const handle = setInterval(() => {
+        console.log('in infinitySubscribe', number)
+        // unsubscribe后，不会停止，因为没complete⬆️
+        // 但unsubscribe后断开连接，observer.next不会使Observer产生响应了⬇️
+        observer.next(number++);
+    }, 1000)
+    return {
+        unsubscribe: () => {
+            // clearInterval(handle);
+        }
+    }
+}
+const infinitySource$ = new Rx.Observable(infinitySubscribe);
 const source$ = new Rx.Observable(onSubscribe);
 const theObserver = {
     next: item => console.log(item),
@@ -38,7 +53,8 @@ source$.subscribe(theObserver);
 //     ()=> console.log('No More Data')
 // );
 
-const subscription = source$.subscribe(item => console.log(item));
+// const subscription = source$.subscribe(item => console.log(item));
+const subscription = infinitySource$.subscribe(item => console.log(item));
 setTimeout(() => {
     subscription.unsubscribe();
 }, 3500)
