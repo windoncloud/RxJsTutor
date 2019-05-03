@@ -52,5 +52,4 @@ function map(project) {
 //
 // Observable.of = functionToImplementOf;
 // console.log('Observable.of', Observable.of)
-
 // Observable.prototype.map = implementationOfMap;
