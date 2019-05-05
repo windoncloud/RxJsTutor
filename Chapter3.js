@@ -43,7 +43,6 @@ function map(project) {
         })
     })
 }
-
 // class Observable {
 //     constructor() {
 //         // 构造函数的实现
