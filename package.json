@@ -1,0 +1,22 @@
+{
+  "name": "rx",
+  "version": "1.0.0",
+  "description": "keep on trying , never give up",
+  "main": "Chapter2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/windoncloud/RxJsTutor.git"
+  },
+  "author": "kingsley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/windoncloud/RxJsTutor/issues"
+  },
+  "homepage": "https://github.com/windoncloud/RxJsTutor#readme",
+  "dependencies": {
+    "rxjs": "^6.5.1"
+  }
+}
