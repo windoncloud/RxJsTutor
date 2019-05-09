@@ -28,6 +28,10 @@ names.do(name => print(name))
     .do(name => print(name))
     .subscribe()
 
+const numbers2 = Rx.Observable.of(-3,5,7,2,-7,9,-2)
+numbers2.filter(n => n <=0 )
+    .subscribe(n => print(n))
+
 function print(val) {
     let el = document.createElement('p')
     el.innerText = val
