@@ -29,8 +29,19 @@ names.do(name => print(name))
     .subscribe()
 
 const numbers2 = Rx.Observable.of(-3,5,7,2,-7,9,-2)
-numbers2.filter(n => n <=0 )
+// numbers2.filter(n => n <=0 )
+numbers2
+    // .filter(n => n <=0 )
+    .first()
+    .last( )
     .subscribe(n => print(n))
+
+let mouseEvents = Rx.Observable.fromEvent(document, 'mousemove')
+
+mouseEvents
+    // .throttleTime(1000)
+    .debounceTime(1000)
+    .subscribe(e => print(e.type))
 
 function print(val) {
     let el = document.createElement('p')
